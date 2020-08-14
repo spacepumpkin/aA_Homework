@@ -7,19 +7,28 @@ class Stack
     end
 
     def push(el)     # adds an element to the stack
-        @stack << el
+        stack << el
+        self        # /!\ have to protect @stack, so we can return self instead
     end
 
     def pop          # removes one element from the stack
-        @stack.pop
+        stack.pop
     end
 
     def peek         # returns, but doesn't remove, the top element in the stack
-        @stack[-1]
+        stack[-1].dup
     end
 
+    def inspect      # /!\ Can override inspect to show w/e, maybe hide instance var
+        "#<Stack: #{self.object_id}>"
+    end
+
+    private         # /!\ Keeps everything below private, accessible only w/in class
+    attr_reader :stack
 end
 
+
+if __FILE__ == $PROGRAM_NAME
 
 test_stack = Stack.new
 
@@ -31,3 +40,5 @@ p test_stack.push(92)
 p test_stack.pop
 
 p test_stack.peek
+
+end
