@@ -26,7 +26,8 @@ class Stack
     private         # /!\ Keeps everything below private, accessible only w/in class
     attr_reader :stack
 end
-
+# RANDOM STUFFFFFFF
+# RANDOM EDIT
 
 if __FILE__ == $PROGRAM_NAME
 
