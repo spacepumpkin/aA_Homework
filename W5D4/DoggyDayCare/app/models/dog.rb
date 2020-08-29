@@ -1,3 +1,10 @@
+# == Schema Information
+#
+# Table name: dogs
+#
+#  id   :bigint           not null, primary key
+#  name :string           not null
+#
 class Dog < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validate :check_name_length
@@ -20,7 +27,7 @@ class Dog < ApplicationRecord
     })
 
     belongs_to(:house, {
-        primary_key: :id,
+        primary_key: :id,   # house id
         foreign_key: :house_id,
         class_name: :House
     })

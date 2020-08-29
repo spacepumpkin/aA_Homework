@@ -1,5 +1,10 @@
-
-
+# == Schema Information
+#
+# Table name: houses
+#
+#  id   :bigint           not null, primary key
+#  name :string           not null
+#
 class House < ApplicationRecord
 
     has_many( :dogs, {
